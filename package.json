@@ -3,11 +3,17 @@
   "version": "0.0.1",
   "description": "A Serverless Project and its Serverless Plugin dependencies.",
   "author": "me",
+  "scripts": {
+      "start": "serverless offline start"
+  },
   "license": "MIT",
   "private": false,
   "repository": {
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "devDependencies": {
+    "serverless-offline": "^2.5.1"
+  }
 }
