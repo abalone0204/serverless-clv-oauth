@@ -4,7 +4,7 @@
   "description": "A Serverless Project and its Serverless Plugin dependencies.",
   "author": "me",
   "scripts": {
-      "start": "serverless offline start"
+    "start": "serverless offline start"
   },
   "license": "MIT",
   "private": false,
@@ -12,7 +12,9 @@
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {},
+  "dependencies": {
+    "node-fetch": "^1.5.3"
+  },
   "devDependencies": {
     "serverless-offline": "^2.5.1"
   }

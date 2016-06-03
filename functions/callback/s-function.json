@@ -4,7 +4,7 @@
   "description": "Serverless Lambda function for project: serverless-clv-oauth",
   "customName": false,
   "customRole": false,
-  "handler": "handler.handler",
+  "handler": "functions/callback/handler.handler",
   "timeout": 6,
   "memorySize": 1024,
   "authorizer": {},
@@ -20,9 +20,7 @@
       "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
-      "requestTemplates": {
-        "application/json": ""
-      },
+      "requestTemplates": "$${requestCallbackTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"

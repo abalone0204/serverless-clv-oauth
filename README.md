@@ -113,6 +113,12 @@ It will response a json:
 
     - Send request to get the grant code
 
+        - Access `https://www.facebook.com/dialog/oauth?client_id=${clientId}&redirect_uri=${redirectUri}&auth_type=rerequest&scope=email,public_profile,user_friends`
+
+        - Then you will redirect to `redirectUri` with grant code(`redirectUri` is handled by our serverless backend)
+
+        - Serverless backend should detect the grant code then
+
     - Fetch access token with grant code
 
 
