@@ -30,6 +30,8 @@
 https://www.facebook.com/dialog/oauth?client_id=APP_ID&redirect_uri=REDIRECT_URI&auth_type=rerequest&scope=email,public_profile,user_friends
 ```
 
+> FYI, there are all `GET` method
+
 - After you click the confirm button, facebook will redirect to your `redirect_uri`, and it will append `GRANT_CODE` after your redirect uri
 
 ```
@@ -39,7 +41,7 @@ REDIRECT_URI?code=GRANT_CODE
 - Then, time to fetch your access token with your grant code
 
 ```
-GET https://graph.facebook.com/v2.3/oauth/access_token?
+https://graph.facebook.com/v2.3/oauth/access_token?
     client_id=APP_ID
    &redirect_uri=REDIRECT_URI
    &client_secret=APP_SECRET
@@ -80,9 +82,39 @@ https://graph.facebook.com/me?access_token=ACCESS_TOKEN
 https://graph.facebook.com/me?fields=mail,id,name&access_token=ACCESS_TOKEN
 ```
 
-> If you want to get avatar of user
+If you want to get avatar of user:
 
-> `https://graph.facebook.com/v2.6/USER_ID/picture`
+`https://graph.facebook.com/v2.6/USER_ID/picture?redirect=false`
+
+And if you don't add the parameter `redirect=false`, you can't access the image directly:
+
+It will response a json:
+
+```json
+{
+  "data": {
+    "is_silhouette": false,
+    "url": "PICTURE_URL"
+  }
+}
+```
+
+> For more detail, check the [official doc](https://developers.facebook.com/docs/graph-api/reference/user/picture/),
+
+> Engineer at facebook definitely make (api's) world a better place
+
+
+
+## 3. Go serverless
+
+- **The most of all, you should never let the `APP_SECRET` expose on client side.**
+
+- Then let's break down the task of how to get your access token:
+
+    - Send request to get the grant code
+
+    - Fetch access token with grant code
+
 
 # Todo
 
