@@ -1,0 +1,10 @@
+{
+    "requestPostAuthTemplate": {
+        "application/json": {
+            "code": "$input.path('$.code')",
+            "secret": "${fb_secret}",
+            "app_id": "${app_id}",
+            "path": "/callback"
+        }
+    }
+}
