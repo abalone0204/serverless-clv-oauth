@@ -126,3 +126,12 @@ It will response a json:
 
 - [] Facebook login
 
+# Usage
+
+- Set variables of :
+  
+  - `fb_secret`
+  
+  - `app_id`
+  
+  - `endpoint_url`
