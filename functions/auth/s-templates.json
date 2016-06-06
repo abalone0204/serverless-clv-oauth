@@ -1,10 +1,12 @@
 {
     "requestPostAuthTemplate": {
         "application/json": {
+            "stage": "$context.stage",
             "code": "$input.path('$.code')",
             "secret": "${fb_secret}",
             "app_id": "${app_id}",
-            "path": "/callback"
+            "path": "callback",
+            "endpoint_url": "${endpoint_url}"
         }
     }
 }

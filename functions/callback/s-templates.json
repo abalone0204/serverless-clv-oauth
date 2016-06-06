@@ -3,8 +3,7 @@
          "application/json": {
             "code": "$input.params('code')",
             "secret": "${fb_secret}",
-            "app_id": "${app_id}",
-            "path": "$context.resourcePath"
+            "app_id": "${app_id}"
          }
     }
 }
